@@ -13,7 +13,7 @@ class AuthController extends Controller
 
     public function index()
     {
-        return view('login.login');
+        return view('frontend.dashboard');
     }
 
     public function authenticate(LoginRequest $request)

@@ -7,9 +7,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/',[AuthController::class, 'register']);
+Route::get('/ddd',[AuthController::class, 'register']);
 Route::post('/register',[AuthController::class, 'processRegister'])->name('register');
 
-Route::get('/login',[AuthController::class, 'index']);
+Route::get('/',[AuthController::class, 'index']);
 Route::post('/login',[AuthController::class, 'authenticate'])->name('register');
 
