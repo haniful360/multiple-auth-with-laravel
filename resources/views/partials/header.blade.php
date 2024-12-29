@@ -1,7 +1,7 @@
-<header class="bg-blue-600 shadow-lg">
+<header class="bg-yellow-600 shadow-lg">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <!-- Logo -->
-      <a href="#" class="text-2xl font-extrabold text-white">MyWebsite</a>
+      <a href="#" class="text-2xl  font-extrabold text-white">MyWebsite</a>
       <!-- Navigation Links -->
       <nav class="hidden md:flex space-x-6">
         <a href="#" class="text-white hover:text-gray-200 transition">Home</a>
@@ -11,8 +11,8 @@
       </nav>
       <!-- Authentication Buttons -->
       <div class="flex space-x-4">
-        <a href="#" class="text-white hover:text-gray-200 transition">Login</a>
-        <a href="#" class="bg-white text-blue-600 hover:bg-gray-100 transition px-4 py-2 rounded-full">Sign Up</a>
+        <a href="{{route('login')}}" class="text-white hover:text-gray-200 transition">Login</a>
+        <a href="{{route('register')}}" class="bg-white text-blue-600 hover:bg-gray-100 transition px-4 py-2 rounded-full">Sign Up</a>
       </div>
       <!-- Mobile Menu Button -->
       <button class="md:hidden text-white focus:outline-none">

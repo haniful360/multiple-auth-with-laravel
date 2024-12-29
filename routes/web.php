@@ -1,15 +1,17 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 // Route::get('/', function () {
 //     return view('welcome');
 // });
 
-Route::get('/ddd',[AuthController::class, 'register']);
-Route::post('/register',[AuthController::class, 'processRegister'])->name('register');
+Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
 
-Route::get('/',[AuthController::class, 'index']);
-Route::post('/login',[AuthController::class, 'authenticate'])->name('register');
+Route::get('/register', [AuthController::class, 'register'])->name('register');
+Route::post('/register', [AuthController::class, 'processRegister'])->name('process.register');
 
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/authenticate', [AuthController::class, 'authenticate'])->name('authenticate');

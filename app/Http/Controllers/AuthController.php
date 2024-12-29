@@ -11,26 +11,26 @@ use Illuminate\Support\Facades\Hash;
 class AuthController extends Controller
 {
 
-    public function index()
+    public function login()
     {
-        return view('frontend.dashboard');
+        return view('frontend.auth.login');
     }
 
     public function authenticate(LoginRequest $request)
     {
 
-    //  if(Auth::attempt(['email' => $request->email, 'password' => $request->  password])){
-    //     return redirect()->route('dashboard');
-    //  }
-    //  else{
-    //     return redirect()->route('login')->with('error', 'Either email or password is incorrect');
-    //  }
+     if(Auth::attempt(['email' => $request->email, 'password' => $request->  password])){
+        return redirect()->route('dashboard');
+     }
+     else{
+        return redirect()->route('login')->with('error', 'Either email or password is incorrect');
+     }
     }
 
 
     public function register()
     {
-        return view('register.register');
+        return view('frontend.auth.register');
     }
 
     public function processRegister(RegisterRequest $request)
