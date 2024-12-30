@@ -2,7 +2,9 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
+use Laravel\Socialite\Facades\Socialite;
 
 Route::get('/', function () {
     return view('frontend.home');
@@ -16,3 +18,6 @@ Route::post('register', [AuthController::class, 'processRegister'])->name('proce
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 
+
+Route::get('/auth/redirect', [SocialController::class, 'redirectToGithub'])->name('auth/redirect');
+Route::get('/auth/callback', [SocialController::class, 'handleGithubCallback']);
