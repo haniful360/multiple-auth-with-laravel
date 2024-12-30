@@ -18,6 +18,10 @@ Route::post('register', [AuthController::class, 'processRegister'])->name('proce
 Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 
+Route::get('logout', [AuthController::class, 'logout'])->name('logout');
+
+
+
 
 // github authentication
 Route::get('/auth/redirect/{provider}', [SocialController::class, 'redirectToProvider'])->name('auth.redirect');

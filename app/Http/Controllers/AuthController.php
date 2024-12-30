@@ -52,4 +52,16 @@ class AuthController extends Controller
 
         return redirect()->route('login')->with('success', 'Registrtion successfull');
     }
+
+    public function logout(Request $request)
+    {
+        Auth::logout();
+
+        // Invalidate the session and regenerate the CSRF token
+        // $request->session()->invalidate();
+        // $request->session()->regenerateToken();
+
+        return redirect('/login')->with('success', 'Logged out successfully!');
+    }
+
 }
