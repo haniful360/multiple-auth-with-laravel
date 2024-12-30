@@ -1,7 +1,7 @@
 <header class="bg-yellow-600 shadow-lg">
     <div class="container mx-auto px-4 py-4 flex justify-between items-center">
       <!-- Logo -->
-      <a href="#" class="text-2xl  font-extrabold text-white">MyWebsite</a>
+      <a href="/" class="text-2xl  font-extrabold text-white">MyWebsite</a>
       <!-- Navigation Links -->
       <nav class="hidden md:flex space-x-6">
         <a href="#" class="text-white hover:text-gray-200 transition">Home</a>

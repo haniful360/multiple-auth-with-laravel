@@ -5,8 +5,12 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\RegisterRequest;
 use App\Models\User;
-use Illuminate\Container\Attributes\Auth;
+// use Illuminate\Container\Attributes\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
+
+
 
 class AuthController extends Controller
 {
@@ -16,15 +20,19 @@ class AuthController extends Controller
         return view('frontend.auth.login');
     }
 
-    public function authenticate(LoginRequest $request)
+    public function authenticate(Request $request)
     {
 
-     if(Auth::attempt(['email' => $request->email, 'password' => $request->  password])){
-        return redirect()->route('dashboard');
-     }
-     else{
-        return redirect()->route('login')->with('error', 'Either email or password is incorrect');
-     }
+
+
+        // dd( $request->all());
+
+        if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
+
+            return redirect()->route('dashboard');
+        } else {
+            return redirect()->route('login')->with('error', 'Either email or password is incorrect');
+        }
     }
 
 
@@ -42,6 +50,6 @@ class AuthController extends Controller
 
         $user->save();
 
-        return redirect()->route('login')->with('Registrtion successfull');
+        return redirect()->route('login')->with('success', 'Registrtion successfull');
     }
 }
