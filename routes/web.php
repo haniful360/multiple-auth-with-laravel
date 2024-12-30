@@ -19,5 +19,12 @@ Route::get('login', [AuthController::class, 'login'])->name('login');
 Route::post('authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 
 
-Route::get('/auth/redirect', [SocialController::class, 'redirectToGithub'])->name('auth/redirect');
-Route::get('/auth/callback', [SocialController::class, 'handleGithubCallback']);
+// github authentication
+Route::get('/auth/redirect/{provider}', [SocialController::class, 'redirectToProvider'])->name('auth.redirect');
+Route::get('/auth/callback/{provider}', [SocialController::class, 'handleProviderCallback'])->name('auth.callback');
+
+// google authentication
+
+// Route::get('auth/redirect', [SocialController::class, 'redirectToGoogle'])->auth('auth/redirect');
+// Route::get('auth/callback', [SocialController::class, 'handleGoogleCallback'])->auth('auth/redirect');
+

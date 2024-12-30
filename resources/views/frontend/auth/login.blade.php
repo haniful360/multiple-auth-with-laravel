@@ -47,8 +47,11 @@
                 </div>
             </form>
 
-            <div class="p-6">
-                <a href="{{route('auth/redirect')}}" class="bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">github</a>
+            <div class="p-6 flex justify-between">
+                <a href="{{ route('auth.redirect', 'github') }}"
+                    class="w-full bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Login with GitHub</a>
+                <a href="{{ route('auth.redirect', 'google') }}"
+                    class="w-full ml-2 bg-blue-600 text-white py-3 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Login with Google</a>
             </div>
 
         </div>
