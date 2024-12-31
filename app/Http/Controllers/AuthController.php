@@ -20,15 +20,12 @@ class AuthController extends Controller
         return view('frontend.auth.login');
     }
 
-    public function authenticate(Request $request)
+    public function authenticate(LoginRequest $request)
     {
-
-
-
         // dd( $request->all());
 
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
-
+            
             return redirect()->route('dashboard');
         } else {
             return redirect()->route('login')->with('error', 'Either email or password is incorrect');

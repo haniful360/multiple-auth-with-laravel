@@ -13,9 +13,11 @@
                     type="text"
                     id="name"
                     name="name"
-                    required
                     class="mt-2 block w-full text-gray-700 border border-gray-300 rounded-md shadow-sm py-2 px-4 focus:ring-blue-500 focus:border-blue-500"
                   />
+                  @error('name')
+                  <span class="text-red-500">{{ $message }}</span>
+                  @enderror
                 </div>
 
                 <!-- Email -->
@@ -25,9 +27,12 @@
                     type="email"
                     id="email"
                     name="email"
-                    required
+
                     class="mt-2 block w-full text-gray-700 border border-gray-300 rounded-md shadow-sm py-2 px-4 focus:ring-blue-500 focus:border-blue-500"
                   />
+                  @error('email')
+                  <span class="text-red-500">{{ $message }}</span>
+                  @enderror
                 </div>
 
                 <!-- Password -->
@@ -37,22 +42,28 @@
                     type="password"
                     id="password"
                     name="password"
-                    required
+
                     class="mt-2 block w-full text-gray-700 border border-gray-300 rounded-md shadow-sm py-2 px-4 focus:ring-blue-500 focus:border-blue-500"
                   />
+                  @error('password')
+                  <span class="text-red-500">{{ $message }}</span>
+                  @enderror
                 </div>
 
                 <!-- Confirm Password -->
-                {{-- <div class="mb-6">
+                <div class="mb-6">
                   <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Confirm Password</label>
                   <input
                     type="password"
                     id="password_confirmation"
                     name="password_confirmation"
-                    required
+
                     class="mt-2 block w-full text-gray-700 border border-gray-300 rounded-md shadow-sm py-2 px-4 focus:ring-blue-500 focus:border-blue-500"
                   />
-                </div> --}}
+                  @error('password')
+                  <span class="text-red-500">{{ $message }}</span>
+                  @enderror
+                </div>
 
                 <!-- Submit Button -->
                 <div>
