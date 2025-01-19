@@ -5,6 +5,7 @@
         <!-- Navigation Links -->
         <nav class="hidden md:flex space-x-6">
             <a href="#" class="text-white hover:text-gray-200 transition">Home</a>
+            <a href="{{route('feature')}}" class="text-white hover:text-gray-200 transition">feature</a>
             <a href="#" class="text-white hover:text-gray-200 transition">About</a>
             <a href="#" class="text-white hover:text-gray-200 transition">Services</a>
             <a href="#" class="text-white hover:text-gray-200 transition">Contact</a>

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\SocialController;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
@@ -20,16 +21,20 @@ Route::prefix('account')->group(function ()  {
     Route::post('authenticate', [AuthController::class, 'authenticate'])->name('authenticate');
 });
 
+Route::get('feature', [HomeController::class, 'index'])->name('feature');
+
+
 
 
 
 // Route::group(['middleware' => 'auth'])->group(function () {});
 
-Route::middleware(['middleware', 'auth'])->group(function () {
+// Route::middleware(['middleware', 'auth'])->group(function () {
 
-    Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
+
+// });
+Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard');
     Route::get('logout', [AuthController::class, 'logout'])->name('logout');
-});
 
 
 // github authentication
